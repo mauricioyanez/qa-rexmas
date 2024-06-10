@@ -25,6 +25,7 @@
 			}
 			else{
 				$mysqli->set_charset("utf8");
+				$mysqli->set_sql_mode("ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE")
 				return $mysqli;
 			}
 		}
