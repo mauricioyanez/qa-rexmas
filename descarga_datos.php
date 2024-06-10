@@ -229,6 +229,8 @@
 
   // Lectura de archivo de cargos
   $logFile = fopen($ruta . "log.txt", 'a') or die("Error creando archivo");
+  $logFile2 = fopen($ruta . "logdetalle.txt", 'a') or die("Error creando archivo");
+
   fwrite($logFile, "\n" . date("d/m/Y H:i:s")." - Ingresando cargos") or die("Error escribiendo en el archivo");
   fclose($logFile);
 
@@ -256,19 +258,27 @@
 
         if($ins == "Ok"){
           echo "Cargo ingresado: " . $id . "\n";
+          fwrite($logFile2, "Cargo ingresado: " . $id . "\n") or die("Error escribiendo en el archivo");
         }
         else{
           echo "Cargo error: " . $id . "\n";
+          fwrite($logFile2, "Cargo error: " . $id . "\n") or die("Error escribiendo en el archivo");
         }
       }
       else{
         echo "Cargo error: " . $id . "\n";
+        fwrite($logFile2, "Cargo error: " . $id . "\n") or die("Error escribiendo en el archivo");
+
       }
     }
     else{
       echo "Cargo error: " . $id . "\n";
+      fwrite($logFile2, "Cargo error: " . $id . "\n") or die("Error escribiendo en el archivo");
+
     }
   }
+  fclose($logFile2);
+
 
   // Lectura de archivo de centro de catalogo
   $logFile = fopen($ruta . "log.txt", 'a') or die("Error creando archivo");
@@ -438,6 +448,8 @@
 
   // Lectura de archivo de contratos
   $logFile = fopen($ruta . "log.txt", 'a') or die("Error creando archivo");
+  $logFile2 = fopen($ruta . "logdetalle.txt", 'a') or die("Error creando archivo");
+
   fwrite($logFile, "\n" . date("d/m/Y H:i:s")." - Ingresando contratos") or die("Error escribiendo en el archivo");
   fclose($logFile);
 
@@ -477,11 +489,16 @@
 
     if($ins == "Ok"){
       echo "Datos contrato cargados: " . $dni . " - " . $fechaInicio . "\n";
+      fwrite($logFile2, "Datos contrato cargados: " . $dni . " - " . $fechaInicio . "\n") or die("Error escribiendo en el archivo");
+
     }
     else{
       echo "Datos contrato no cargados: " . $dni . " - " . $fechaInicio . "\n";
+      fwrite($logFile2, "Datos contrato no cargados: " . $dni . " - " . $fechaInicio . "\n") or die("Error escribiendo en el archivo");
+
     }
   }
+  fclose($logFile2);
 
   ingresaDesvinculacion();
   actualizaCargoGenericoPersonal();
@@ -490,6 +507,8 @@
 
   // Lectura de archivo de vacaciones
   $logFile = fopen($ruta . "log.txt", 'a') or die("Error creando archivo");
+  $logFile2 = fopen($ruta . "logdetalle.txt", 'a') or die("Error creando archivo");
+
   fwrite($logFile, "\n" . date("d/m/Y H:i:s")." - Ingresando vacaciones") or die("Error escribiendo en el archivo");
   fclose($logFile);
 
@@ -517,13 +536,19 @@
 
         if($ins == "Ok"){
           echo "Vacación ingresada: " . $dni . " | " . $fini . " - " . $fter . "\n";
+          fwrite($logFile2, "Vacación ingresada: " . $dni . " | " . $fini . " - " . $fter . "\n") or die("Error escribiendo en el archivo");
+
         }
         else{
           echo "Vacación error: " . $dni . " | " . $fini . " - " . $fter . "\n";
+          fwrite($logFile2, "Vacación error: " . $dni . " | " . $fini . " - " . $fter . "\n") or die("Error escribiendo en el archivo");
+
         }
       }
       else{
         echo "Vacio: " . $arregloIni[$i][8] . "\n";
+        fwrite($logFile2, "Vacio: " . $arregloIni[$i][8] . "\n") or die("Error escribiendo en el archivo");
+
       }
     }
     else{
