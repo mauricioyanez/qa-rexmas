@@ -555,9 +555,12 @@
       echo "No aplica \n";
     }
   }
+fclose($logFile2);
 
   // Lectura de archivo de licencias
   $logFile = fopen($ruta . "log.txt", 'a') or die("Error creando archivo");
+  $logFile2 = fopen($ruta . "logdetalle.txt", 'a') or die("Error creando archivo");
+
   fwrite($logFile, "\n" . date("d/m/Y H:i:s")." - Ingresando licencias") or die("Error escribiendo en el archivo");
   fclose($logFile);
 
@@ -587,15 +590,22 @@
       $ins = ingresaLicenciaRexmas($dni,$fini,$fter,$tipoLic,$idRexmas);
       if($ins == "Ok"){
         echo "Licencia ingresada: " . $dni . " | " . $fini . " - " . $fter . "\n";
+        fwrite($logFile2, "Licencia ingresada: " . $dni . " | " . $fini . " - " . $fter . "\n") or die("Error escribiendo en el archivo");
+
       }
       else{
         echo "Licencia error: " . $dni . " | " . $fini . " - " . $fter . "\n";
+        fwrite($logFile2, "Licencia error: " . $dni . " | " . $fini . " - " . $fter . "\n") or die("Error escribiendo en el archivo");
+
       }
     }
     else{
       echo "No aplica \n";
-    }
+      fwrite($logFile2, "No aplica :" . $dni . " | " . $fini . " - " . $fter . "\n") or die("Error escribiendo en el archivo");
+        }
   }
+  fclose($logFile2);
+
 
   // Lectura de archivo de permisos administrativos
   $logFile = fopen($ruta . "log.txt", 'a') or die("Error creando archivo");
