@@ -74,6 +74,7 @@ periodos.append(periodo_anterior2)
 periodos.append(periodo_anterior)
 periodos.append(periodo_actual)
 
+
 for i in range(len(informes)):
     if i == 8:
         print("Descargando informe: " + informes[i][1])
