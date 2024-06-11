@@ -76,33 +76,34 @@ periodos.append(periodo_actual)
 
 
 for i in range(len(informes)):
-    if i == 8:
-        print("Descargando informe: " + informes[i][1])
-    
-        driver.get('https://soloverde.rexmas.cl/remuneraciones/es-CL/rexisa/gecos/' + str(informes[i][0]) + '/ejecutar')
-    
-        driver.implicitly_wait(180)
+    if i != 10:
+        if i ==8:
+            print("Descargando informe: " + informes[i][1])
+        
+            driver.get('https://soloverde.rexmas.cl/remuneraciones/es-CL/rexisa/gecos/' + str(informes[i][0]) + '/ejecutar')
+        
+            driver.implicitly_wait(180)
 
-        # wait = WebDriverWait(driver, 30)
-        # button = wait.until(EC.element_to_be_clickable((By.XPATH, "/html/body/div[1]/div[3]/div[2]/div[2]/form/div[2]/div/input")))
-        # button = wait.until(EC.element_to_be_clickable((By.CLASS_NAME, "button-submit")))
-        button = driver.find_elements(By.CLASS_NAME, "button-submit")
-        button[0].click()
+            # wait = WebDriverWait(driver, 30)
+            # button = wait.until(EC.element_to_be_clickable((By.XPATH, "/html/body/div[1]/div[3]/div[2]/div[2]/form/div[2]/div/input")))
+            # button = wait.until(EC.element_to_be_clickable((By.CLASS_NAME, "button-submit")))
+            button = driver.find_elements(By.CLASS_NAME, "button-submit")
+            button[0].click()
 
-        time.sleep(30)
+            time.sleep(30)
 
-        # response = driver.requests[-1].response
+            # response = driver.requests[-1].response
 
-        # nombre_archivo = informes[i][1] + '.xlsx'
-        # ruta_destino = downloads_path + '/' + nombre_archivo
-        # with open(ruta_destino, 'wb') as archivo:
-        #     archivo.write(response.body)
+            # nombre_archivo = informes[i][1] + '.xlsx'
+            # ruta_destino = downloads_path + '/' + nombre_archivo
+            # with open(ruta_destino, 'wb') as archivo:
+            #     archivo.write(response.body)
 
-        #time.sleep(2)
+            #time.sleep(2)
 
-        print("Informe descargado: " + informes[i][1])
-    
-        time.sleep(2)
+            print("Informe descargado: " + informes[i][1])
+        
+            time.sleep(2)
     else:
         for j in range(len(periodos)):
             print("Descargando informe: " + informes[i][1] + ", Periodo: " + periodos[j])
