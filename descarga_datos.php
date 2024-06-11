@@ -627,7 +627,7 @@ fclose($logFile2);
     $date2 = new DateTime($fini);
     $diff = $date1->diff($date2);
 
-    if($diff->days <= 370){
+    if($diff->days <= 740){
       if($arregloIni[$i][2] != ""){
         $dni = $arregloIni[$i][0];
         $fini = $arregloIni[$i][2];
