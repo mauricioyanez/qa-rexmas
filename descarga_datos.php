@@ -655,7 +655,7 @@ fclose($logFile2);
     }
   }
   fclose($logFile2);
-
+/*
   // Lectura de archivo de permisos espera licencia
   $logFile = fopen($ruta . "log.txt", 'a') or die("Error creando archivo");
   fwrite($logFile, "\n" . date("d/m/Y H:i:s")." - Ingresando permisos espera licencia") or die("Error escribiendo en el archivo");
@@ -697,7 +697,7 @@ fclose($logFile2);
       echo "No aplica \n";
     }
   }
-
+*/
   eliminarVacLicBorradasRexmas();
 
   unlink($ruta . "consulta_ct01_empleados.xlsx");
