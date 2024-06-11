@@ -48,7 +48,7 @@
   $periodos[3] = $periodoAnterior2;
   $periodos[4] = $periodoAnterior;
   $periodos[5] = $periodoActual;
-
+/*
   for($z = 0; $z < count($periodos); $z++){
     //echo $z;
     try {
@@ -606,7 +606,7 @@ fclose($logFile2);
   }
   fclose($logFile2);
 
-
+*/
   // Lectura de archivo de permisos administrativos
   $logFile = fopen($ruta . "log.txt", 'a') or die("Error creando archivo");
   $logFile2 = fopen($ruta . "logdetalle.txt", 'a') or die("Error creando archivo");
