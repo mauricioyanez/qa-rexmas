@@ -902,22 +902,22 @@ require('conexion.php');
 	  $con = conectar();
 	  $con->query("SET @@SESSION.sql_mode ='ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE';");
 
-	  $con->query("START TRANSACTION");
+	  //$con->query("START TRANSACTION");
 	  if($con != 'No conectado'){
 	    $sql = "CALL INSERTAR_PERMISO_ADMINISTRATIVO_RANGO('{$dni}','{$fini}','{$fter}')";
 	    if ($con->query($sql)) {
-	      $con->query("COMMIT");
+	      //$con->query("COMMIT");
 	      return "Ok";
 	    }
 	    else{
 	      // return $con->error;
-	      $con->query("ROLLBACK");
+	      // $con->query("ROLLBACK");
 	      return "Error";
 	      // return $sql;
 	    }
 	  }
 	  else{
-	    $con->query("ROLLBACK");
+	    //$con->query("ROLLBACK");
 	    return "Error";
 	  }
 	}
