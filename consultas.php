@@ -542,6 +542,8 @@ require('conexion.php');
 
 	function ingresaVacacionRexmas($dni,$fini,$fter,$idRexmas){
 	  $con = conectar();
+	  $con->query("SET @@SESSION.sql_mode ='ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION,NO_ZERO_IN_DATE,NO_ZERO_DATE';");
+
 	  $con->query("START TRANSACTION");
 	  if($con != 'No conectado'){
 	    $sql = "CALL INSERTAR_VACACIONES_RANGO('{$dni}','{$fini}','{$fter}','{$idRexmas}')";
@@ -564,6 +566,8 @@ require('conexion.php');
 
 	function ingresaLicenciaRexmas($dni,$fini,$fter,$tipoLic,$idRexmas){
 	  $con = conectar();
+	  $con->query("SET @@SESSION.sql_mode ='ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION,NO_ZERO_IN_DATE,NO_ZERO_DATE';");
+
 	  $con->query("START TRANSACTION");
 	  if($con != 'No conectado'){
 	    $sql = "CALL INSERTAR_LICENCIA_RANGO('{$dni}','{$fini}','{$fter}','{$tipoLic}','{$idRexmas}')";
@@ -642,6 +646,8 @@ require('conexion.php');
 
 	function ingresaDesvinculacion(){
 	  $con = conectar();
+	  $con->query("SET @@SESSION.sql_mode ='ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION,NO_ZERO_IN_DATE,NO_ZERO_DATE';");
+
 	  $con->query("START TRANSACTION");
 	  if($con != 'No conectado'){
 	    $sql = "CALL INSERTAR_DESVINCULACION();";
@@ -727,6 +733,8 @@ require('conexion.php');
 
 	function ingresaDatosContrato($dni,$fechaTermino,$causalTermino,$codigoCargoGenerico,$codigoRef1,$codigoRef2,$idcargo,$idcentrocosto,$fechaInicio,$clasificacionContrato,$idempresa){
 	  $con = conectar();
+	  $con->query("SET @@SESSION.sql_mode ='STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION,NO_ZERO_IN_DATE,NO_ZERO_DATE';");
+
 	  $con->query("START TRANSACTION");
 	  if($con != 'No conectado'){
 	    $sql = "INSERT INTO CONTRATO_TEMPORAL
@@ -776,6 +784,8 @@ require('conexion.php');
 
 	function limpiarDatosContrato(){
 	  $con = conectar();
+	  $con->query("SET @@SESSION.sql_mode ='ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION,NO_ZERO_IN_DATE,NO_ZERO_DATE';");
+
 	  $con->query("START TRANSACTION");
 	  if($con != 'No conectado'){
 	    $sql = "DELETE FROM CONTRATO_TEMPORAL";
@@ -823,6 +833,8 @@ require('conexion.php');
 
 	function eliminarVacLicBorradasRexmas(){
 	  $con = conectar();
+	  $con->query("SET @@SESSION.sql_mode ='ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION,NO_ZERO_IN_DATE,NO_ZERO_DATE';");
+
 	  $con->query("START TRANSACTION");
 	  if($con != 'No conectado'){
 	    $sql = "CALL ELIMINA_VAC_LIC_BORRADAS_REXMAS();";
@@ -845,6 +857,8 @@ require('conexion.php');
 
 	function ingresaCatalogoFeriado($fecha,$tipo,$habilitado){
 	  $con = conectar();
+	  $con->query("SET @@SESSION.sql_mode ='ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION,NO_ZERO_IN_DATE,NO_ZERO_DATE';");
+
 	  $con->query("START TRANSACTION");
 	  if($con != 'No conectado'){
 	    $sql = "INSERT INTO FERIADOS_REXMAS
@@ -924,6 +938,8 @@ require('conexion.php');
 
 	function ingresaPermisoEsperaLicenciaRexmas($dni,$fini,$fter){
 	  $con = conectar();
+	  $con->query("SET @@SESSION.sql_mode ='ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION,NO_ZERO_IN_DATE,NO_ZERO_DATE';");
+
 	  $con->query("START TRANSACTION");
 	  if($con != 'No conectado'){
 	    $sql = "CALL INSERTAR_PERMISO_ESPERA_LICENCIA_RANGO('{$dni}','{$fini}','{$fter}')";
