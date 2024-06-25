@@ -542,7 +542,7 @@ require('conexion.php');
 
 	function ingresaVacacionRexmas($dni,$fini,$fter,$idRexmas){
 	  $con = conectar();
-	  $con->query("SET @@SESSION.sql_mode ='ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION,NO_ZERO_IN_DATE,NO_ZERO_DATE';");
+	  $con->query("SET @@SESSION.sql_mode ='STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION,NO_ZERO_IN_DATE,NO_ZERO_DATE';");
 
 	  $con->query("START TRANSACTION");
 	  if($con != 'No conectado'){
@@ -566,7 +566,7 @@ require('conexion.php');
 
 	function ingresaLicenciaRexmas($dni,$fini,$fter,$tipoLic,$idRexmas){
 	  $con = conectar();
-	  $con->query("SET @@SESSION.sql_mode ='ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION,NO_ZERO_IN_DATE,NO_ZERO_DATE';");
+	  $con->query("SET @@SESSION.sql_mode ='STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION,NO_ZERO_IN_DATE,NO_ZERO_DATE';");
 
 	  $con->query("START TRANSACTION");
 	  if($con != 'No conectado'){
@@ -646,7 +646,7 @@ require('conexion.php');
 
 	function ingresaDesvinculacion(){
 	  $con = conectar();
-	  $con->query("SET @@SESSION.sql_mode ='ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION,NO_ZERO_IN_DATE,NO_ZERO_DATE';");
+	  $con->query("SET @@SESSION.sql_mode ='STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION,NO_ZERO_IN_DATE,NO_ZERO_DATE';");
 
 	  $con->query("START TRANSACTION");
 	  if($con != 'No conectado'){
@@ -784,7 +784,7 @@ require('conexion.php');
 
 	function limpiarDatosContrato(){
 	  $con = conectar();
-	  $con->query("SET @@SESSION.sql_mode ='ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION,NO_ZERO_IN_DATE,NO_ZERO_DATE';");
+	  $con->query("SET @@SESSION.sql_mode ='STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION,NO_ZERO_IN_DATE,NO_ZERO_DATE';");
 
 	  $con->query("START TRANSACTION");
 	  if($con != 'No conectado'){
@@ -833,7 +833,7 @@ require('conexion.php');
 
 	function eliminarVacLicBorradasRexmas(){
 	  $con = conectar();
-	  $con->query("SET @@SESSION.sql_mode ='ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION,NO_ZERO_IN_DATE,NO_ZERO_DATE';");
+	  $con->query("SET @@SESSION.sql_mode ='STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION,NO_ZERO_IN_DATE,NO_ZERO_DATE';");
 
 	  $con->query("START TRANSACTION");
 	  if($con != 'No conectado'){
@@ -857,7 +857,7 @@ require('conexion.php');
 
 	function ingresaCatalogoFeriado($fecha,$tipo,$habilitado){
 	  $con = conectar();
-	  $con->query("SET @@SESSION.sql_mode ='ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION,NO_ZERO_IN_DATE,NO_ZERO_DATE';");
+	  $con->query("SET @@SESSION.sql_mode ='STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION,NO_ZERO_IN_DATE,NO_ZERO_DATE';");
 
 	  $con->query("START TRANSACTION");
 	  if($con != 'No conectado'){
@@ -914,7 +914,7 @@ require('conexion.php');
 
 	function ingresaPermisoAdministrativoRexmas($dni,$fini,$fter){
 	  $con = conectar();
-	  $con->query("SET @@SESSION.sql_mode ='ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION,NO_ZERO_IN_DATE,NO_ZERO_DATE';");
+	  $con->query("SET @@SESSION.sql_mode ='STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION,NO_ZERO_IN_DATE,NO_ZERO_DATE';");
 
 	  $con->query("START TRANSACTION");
 	  if($con != 'No conectado'){
@@ -938,7 +938,7 @@ require('conexion.php');
 
 	function ingresaPermisoEsperaLicenciaRexmas($dni,$fini,$fter){
 	  $con = conectar();
-	  $con->query("SET @@SESSION.sql_mode ='ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION,NO_ZERO_IN_DATE,NO_ZERO_DATE';");
+	  $con->query("SET @@SESSION.sql_mode ='STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION,NO_ZERO_IN_DATE,NO_ZERO_DATE';");
 
 	  $con->query("START TRANSACTION");
 	  if($con != 'No conectado'){
